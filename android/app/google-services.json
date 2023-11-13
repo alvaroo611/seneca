@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "364563782587",
+    "project_id": "isenecafirebase-4a37f",
+    "storage_bucket": "isenecafirebase-4a37f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364563782587:android:2d09841721f824cc70829e",
+        "android_client_info": {
+          "package_name": "com.example.firebaseclean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364563782587-e6mme1bfb6iplms3pracrqk9de0banuv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebaseclean",
+            "certificate_hash": "cd17de0b5ed5df6651357d9358ba5c800f7d0c0f"
+          }
+        },
+        {
+          "client_id": "364563782587-rseg8814nksg9n497rijuj76ulllnt9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLELanYfNLZ8Po_UUya6KWafH5HILh_ZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364563782587-rseg8814nksg9n497rijuj76ulllnt9b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "364563782587-avht9ch74ittan9f9n6ht4tjsqll5071.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.seneca"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364563782587:android:a8bed146affca6a770829e",
+        "android_client_info": {
+          "package_name": "com.example.seneca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364563782587-rseg8814nksg9n497rijuj76ulllnt9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLELanYfNLZ8Po_UUya6KWafH5HILh_ZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364563782587-rseg8814nksg9n497rijuj76ulllnt9b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "364563782587-avht9ch74ittan9f9n6ht4tjsqll5071.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.seneca"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

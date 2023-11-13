@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>364563782587-othueronfpugpbmu01dqp429aqbt1571.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.364563782587-othueronfpugpbmu01dqp429aqbt1571</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>364563782587-e6mme1bfb6iplms3pracrqk9de0banuv.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB0xEYXvQOtsEYB3XRrru7L67diWXbOroc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>364563782587</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.seneca.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>isenecafirebase-4a37f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>isenecafirebase-4a37f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:364563782587:ios:1022bea1e770dcd670829e</string>
+</dict>
+</plist>
