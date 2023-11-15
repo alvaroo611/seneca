@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:seneca/presentation/screen/menu_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
+import 'package:seneca/provider/comprobar_loguin.dart';
 
 class LoguinScreen extends StatelessWidget {
   const LoguinScreen({super.key});
- 
 
   @override
   Widget build(BuildContext context) {
@@ -52,32 +53,42 @@ class Content extends StatefulWidget {
 class _ContentState extends State<Content> {
   final TextEditingController userController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  
-  
-  
-   Future<void> _signInWithGoogle(BuildContext context) async {
+
+  Future<void> _signInWithGoogle(BuildContext context) async {
     try {
+      final provider = context.read<AppProvider>();
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-      final GoogleSignInAuthentication googleAuth = await googleUser!.authentication;
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser!.authentication;
       final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
       await FirebaseAuth.instance.signInWithCredential(credential);
 
-      // Después de iniciar sesión con Google, navegar a la pantalla de usuario
-      // ignore: use_build_context_synchronously
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const MenuScreen()),
-      );
+      // Comprobar si el usuario está en la lista antes de navegar a la siguiente pantalla
+      if (await provider.compruebaUsuarioList()) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const MenuScreen()),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Usuario no autorizado"),
+          ),
+        );
+      }
     } catch (e) {
-      // ignore: avoid_print
       print("Error al iniciar sesión con Google: $e");
     }
   }
+
   @override
   Widget build(BuildContext context) {
+    // Después de iniciar sesión con Google, navegar a la pantalla de usuario
+    // ignore: use_build_context_synchronously
+
     final size = MediaQuery.of(context).size;
     final inputDecorationUser = InputDecoration(
       border: OutlineInputBorder(
@@ -140,18 +151,20 @@ class _ContentState extends State<Content> {
                   child: const Text('Entrar'),
                 ),
                 const SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () => _signInWithGoogle(context),
-                child: const Text('Iniciar sesión con Google'),
-              ),
-                SizedBox(height: size.height*0.05,),
-                 const Text(
+                ElevatedButton(
+                  onPressed: () => _signInWithGoogle(context),
+                  child: const Text('Iniciar sesión con Google'),
+                ),
+                SizedBox(
+                  height: size.height * 0.05,
+                ),
+                const Text(
                   'No recuerdo mi contraseña',
                   style: TextStyle(
-                    color: Colors.white, // Puedes ajustar el color según tus preferencias
+                    color: Colors
+                        .white, // Puedes ajustar el color según tus preferencias
                   ),
                 ),
-                
               ],
             ),
           ),

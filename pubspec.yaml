@@ -37,7 +37,7 @@ dependencies:
   firebase_auth: ^4.13.0
   google_sign_in: ^6.1.6
   local_auth: ^2.1.7
-
+  dio: ^5.3.3
 dev_dependencies:
   flutter_test:
     sdk: flutter

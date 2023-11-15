@@ -5,12 +5,13 @@ import 'package:seneca/widgets/exportWidget.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
-   Future<User?> _getCurrentUser() async {
+  Future<User?> _getCurrentUser() async {
     final User? user = FirebaseAuth.instance.currentUser;
     if (user != null && !user.isAnonymous) {
       return user;
     } else {
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signInSilently();
+      final GoogleSignInAccount? googleUser =
+          await GoogleSignIn().signInSilently();
       if (googleUser != null) {
         final GoogleSignInAuthentication googleAuth =
             await googleUser.authentication;
@@ -24,7 +25,8 @@ class MenuScreen extends StatelessWidget {
       }
     }
     return null;
-   }
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -90,22 +92,22 @@ class MenuScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                             SizedBox(
-                              width: size.width*0.1,
+                            SizedBox(
+                              width: size.width * 0.1,
                             ),
                             _buildImageWithText(
                               'assets/sombrero.png',
                               'Alumnado del centro',
                             ),
-                          SizedBox(
-                              width: size.width*0.1,
+                            SizedBox(
+                              width: size.width * 0.1,
                             ),
                             _buildImageWithText(
                               'assets/profesor.png',
                               'Personal del centro',
                             ),
                             SizedBox(
-                              width: size.width*0.05,
+                              width: size.width * 0.05,
                             ),
                             _buildImageWithText(
                               'assets/covid.png',
@@ -116,24 +118,22 @@ class MenuScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                             SizedBox(
-                              width: size.width*0.1,
-                              height: size.height*0.2,
+                            SizedBox(
+                              width: size.width * 0.1,
+                              height: size.height * 0.2,
                             ),
-                           _buildImageWithText(
-                                'assets/campana.png',
-                                'Tablón de anuncios',
-                              ),
-                             SizedBox(
-                              width: size.width*0.1,
-                              height: size.height*0.2,
+                            _buildImageWithText(
+                              'assets/campana.png',
+                              'Tablón de anuncios',
                             ),
-                            
-                               _buildImageWithText(
-                                'assets/calendario.png',
-                                'Calendario escolar',
-                              ),
-                            
+                            SizedBox(
+                              width: size.width * 0.1,
+                              height: size.height * 0.2,
+                            ),
+                            _buildImageWithText(
+                              'assets/calendario.png',
+                              'Calendario escolar',
+                            ),
                           ],
                         ),
                       ],
@@ -156,7 +156,6 @@ class MenuScreen extends StatelessWidget {
                         label: 'Inicio',
                         labelColor: Colors.grey,
                         iconColor: Colors.blue,
-                        
                       ),
                       IconItem(
                         icon: Icons.access_time_sharp,
@@ -209,6 +208,7 @@ class MenuScreen extends StatelessWidget {
     );
   }
 }
+
 class IconItem extends StatelessWidget {
   final IconData icon;
   final String label;
